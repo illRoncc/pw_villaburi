@@ -1,0 +1,13 @@
+DUBBI E PERPLESSITA'   
+
+- quale software usare ( GIS? LEAFLET? OPEN STREET MAP?)
+
+- implementare db e javascript, come fare?
+
+- cosa serve effettivamente agli utenti finali?
+
+- macro aree? esistono?
+
+- come vengo gestite le eventuali prenotazioni? 
+
+- database aggiornabile in base all'evoluzione del parco? Ogni quanto viene 'ristrutturato' il parco?
