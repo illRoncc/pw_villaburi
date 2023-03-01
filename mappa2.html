@@ -1,24 +1,30 @@
-<div id="mapid" style="height: 500px;"></div>
-
-  
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Mappa interattiva di Villa Buri a Verona</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Includi la libreria Leaflet -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-46nV7GZkw2hZOD7g/+KjOkqS6ZR5Y5D5j6FL5E2zoIk4ewZRG8iPndBVCpX/xl1u" crossorigin=""/>
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-L9zYWFtFyPvIqtf3djy1tq8ItlWjKvjBnTzTvaT9E8YhPLV/ql/nLd46lyOjRcO2" crossorigin=""></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-VzLXTJGPSyTLX6d96AxgkKvE/LRb7ECGyTxuwtpjHnVWVZs2gp5RDjeM/tgBnVdM" crossorigin=""/>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-RFZC58YeKApoNsIbBxf4z6JJXmh+geBSgkCQXFyh+4tiFSJmJBt+2FbjxW7Ar16M" crossorigin=""></script>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#mapid {
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
-	<div id="mapid" style="height: 500px;"></div>
+	<div id="mapid"></div>
 	<script>
 		var mymap = L.map('mapid').setView([45.419834, 11.041281], 16);
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		  maxZoom: 19,
-		  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+			maxZoom: 19,
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 		}).addTo(mymap);
 
 		var marker = L.marker([45.419834, 11.041281]).addTo(mymap);
@@ -26,3 +32,4 @@
 	</script>
 </body>
 </html>
+
