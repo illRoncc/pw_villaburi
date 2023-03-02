@@ -14,13 +14,24 @@
         
 		var mymap = L.map('mapid', {maxZoom: 20, minZoom: 18}).setView([45.419834, 11.041281], 18);
     
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 		}).addTo(mymap);
     
 		var marker = L.marker([45.419834, 11.041281]).addTo(mymap);
 		marker.bindPopup("<b>Villa Buri</b><br>Questo è un bellissimo edificio storico situato a Verona, Italia").openPopup();
+
+		var marker2 = L.marker([45.42060819099535, 11.041293669208489],{
+			
+			icon: L.icon({
+			iconUrl: 'mappa_parcheggio.png',
+			iconSize:[30,35],
+			iconAnchor: [15,30]
+			})
+		}).addTo(mymap);
+		marker2.bindPopup("<b>Questo è il parcheggio</b><br> se sei una donna, parcheggia da un'altra parte").openPopup();
+		
 	</script>
 </body>
 </html>
