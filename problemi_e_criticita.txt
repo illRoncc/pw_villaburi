@@ -1,0 +1,14 @@
+Join .shp e .csv
+----------------
+
+Dopo svariate prove e  ricerche ci risulta quasi impossibile joinare i due file.
+A quanto pare ci sono diversi problemi:
+- il file .shp potrebbe essere in qualche modo corrotto
+- non ci sono colonne in comune nei due file e non si può utilizzare la 
+  funzione merge di python.
+- provando ad aprire il file .shp su qgis non si riesce a visualizzare
+  nulla. Probabilmente questo è dovuto al primo problema elencato.
+
+Siamo riusciti ad avere una visualizzazione statica della mappa tramite la 
+libreria python geopandas con alcune coordinate, che risultano però approssimate
+
