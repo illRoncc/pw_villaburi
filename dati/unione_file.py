@@ -43,4 +43,4 @@ print(fixed_csv)
 # Queste righe poi sono da mettere in un altro dataframe CREATO CON GEOPANDAS
 
 common_ids = set(fixed_shp).intersection(set(fixed_csv))
-new_df = dati_uniti[dati_uniti['id'].isin(common_ids)]
+nuovo_df = dati_uniti[dati_uniti['id'].isin(common_ids)]
