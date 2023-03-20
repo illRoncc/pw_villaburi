@@ -22,7 +22,7 @@ id_csv_file.sort()
 array_unito = []
 
 for i in range(len(id_csv_file)):
-    if (id_csv_file[i] == id_csv_file[i]):
+    if (id_csv_file[i] == id_shp_file[i]):
         array_unito.append(id_csv_file[i])
 
 # Da qui in poi c'è bisogno di prendere dai due dataset solo le righe con gli id nell'array che abbiamo creato
