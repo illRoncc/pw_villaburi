@@ -5,14 +5,15 @@ from PIL import Image
 import geopandas as gpd
 import pandas as pd
 
-shp_file = gpd.read_file ("C:/Users/ronca/Desktop/pw_villaburi/dati/villa buri viale ingresso.shp")
-csvfile = pd.read_csv("C:/Users/ronca/Desktop/pw_villaburi/dati/datiAlberi.csv",sep =";")
+shp_file = gpd.read_file ("/home/adlv/Scrivania/Share_Win/dati/villa buri viale ingresso.shp")
+csvfile = pd.read_csv("/home/adlv/Scrivania/Share_Win/dati/datiAlberi.csv",sep =";")
 
 # Così dovreste riuscire a trovare gli id albero comuni tra i due
 # Modo molto sporco, ci sono sicuramente metodi più veloci e puliti con altre funzioni/metodi in python
 
 id_shp_file = shp_file['id']
 id_csv_file = csvfile['id']
+
 
 array_unito = []
 
@@ -33,3 +34,19 @@ for i in range(len(id_csv_file)):
         fixed_csv.append(id_csv_file[i])
 
 print(len(fixed_csv), len(fixed_shp))
+
+new_shp_file = shp_file[shp_file['id'].isin(fixed_shp)]
+
+new_csv_file = csvfile[csvfile['id'].isin(fixed_csv)]
+
+fixed_dati_uniti = pd.merge(new_shp_file, new_csv_file, on = 'id')
+
+print(fixed_dati_uniti)
+
+#gdf = gpd.GeoDataFrame(fixed_dati_uniti, geometry = 'geometry')
+
+
+
+
+
+
