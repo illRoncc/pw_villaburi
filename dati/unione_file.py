@@ -4,9 +4,10 @@
 #from PIL import Image
 import geopandas as gpd
 import pandas as pd
+import json
 
-shp_file = gpd.read_file ("villa buri viale ingresso.shp")
-csvfile = pd.read_csv("datiAlberi.csv", sep =";")
+shp_file = gpd.read_file ("C:/Users/ronca/Desktop/pw_villaburi/dati/villa buri viale ingresso.shp")
+csvfile = pd.read_csv("C:/Users/ronca/Desktop/pw_villaburi/dati/datiAlberi.csv", sep =";")
 
 # Così dovreste riuscire a trovare gli id albero comuni tra i due
 # Modo molto sporco, ci sono sicuramente metodi più veloci e puliti con altre funzioni/metodi in python
@@ -14,7 +15,7 @@ csvfile = pd.read_csv("datiAlberi.csv", sep =";")
 id_shp_file = shp_file['id']
 id_csv_file = csvfile['id']
 
-print(len(id_shp_file), len(id_csv_file))
+#print(len(id_shp_file), len(id_csv_file))
 
 array_unito = []
 
@@ -67,7 +68,7 @@ fixed_dati_uniti = pd.merge(new_shp_file, new_csv_file, on = 'id')
 new_df = shp_file.merge(csvfile, how='inner', on='id')
 df_no_duplicates = new_df.drop_duplicates(subset='id')
 
-print(len(new_df['id']), len(df_no_duplicates['id']))
+print(len(df_no_duplicates['id']))
 
 '''
 
@@ -77,5 +78,18 @@ print(len(new_df['id']), len(df_no_duplicates['id']))
 
 '''
 
-#df_no_duplicates.to_file("alberi.geojson", driver='GeoJSON')
+df_no_duplicates.to_file("alberi.geojson", driver='GeoJSON')
+
+#funzione per leggere in file geojson
+
+with open('alberi.geojson', 'r') as f:
+
+    data = json.load(f)
+
+print(data)
+
+
+
+
+
 
