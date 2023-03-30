@@ -1,6 +1,0 @@
-https://leafletjs.com/ --> software per la creazione di mappe interattive,
-è una libreria di javascript
-
-GIS --> software per la creazione di mappe interattive geolocalizzate
-
-Open Street Map --> software open source
