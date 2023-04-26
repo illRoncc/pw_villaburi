@@ -10,7 +10,7 @@ app.use(router);
 app.use(bodyParser.json());
 
 router.get("/", function (req, res) {
-    res.sendFile('D:/ITS/ITS/PWconNodejs/MappaOpenStreet.html')
+    res.sendFile('C:/Users/ronca/Desktop/pw_villaburi/mappa_interattiva/mappa.html')
 });
 
 router.get("/lm", function (req, res) {
