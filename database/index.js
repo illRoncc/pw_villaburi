@@ -10,15 +10,15 @@ app.use(router);
 app.use(bodyParser.json());
 
 router.get("/", function (req, res) {
-    res.sendFile('D:/ITS/ITS/PWconNodejs/file2.html')
+    res.sendFile('D:/ITS/ITS/PWconNodejs/MappaOpenStreet.html')
 });
 
 router.get("/lm", function (req, res) {
-   res.sendFile('D:/ITS/ITS/PWconNodejs/file3.html')
+   res.sendFile('D:/ITS/ITS/PWconNodejs/MappaLightMode.html')
 });
 
 router.get("/dm", function (req, res) {
-    res.sendFile('D:/ITS/ITS/PWconNodejs/file.html')
+    res.sendFile('D:/ITS/ITS/PWconNodejs/MappaDarkMode.html')
 });
 
 router.get("/mm", function (req, res) {
